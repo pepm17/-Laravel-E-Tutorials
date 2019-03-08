@@ -15,9 +15,6 @@ class CreateTutorialsTable extends Migration
     {
         Schema::create('tutorials', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->unsignedInteger('tutor_id');
-            $table->foreign('tutor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
