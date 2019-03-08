@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('/');
+
+Auth::routes();
+
+Route::resource('tutorial', 'TutorialController');
