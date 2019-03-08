@@ -40,7 +40,9 @@ class TutorialController extends Controller
         $tutorial = new Tutorial;
         $tutorial->name = $request->name;
         $tutorial->tutor_id = auth()->user()->id;
+        $tutorial->password = $request->password;
         $tutorial->save();
+        $tutorial->users()->attach(auth()->user()->id);
         return redirect()->route('tutorial.index')->with('succes', 'New tutorial created successfully');
     }
 
@@ -93,5 +95,17 @@ class TutorialController extends Controller
         $tutorial = Tutorial::find($id);
         $tutorial->delete();
         //return redirect()->route('.index')->with('success', 'Tutorial deleted successfully');
+    }
+
+    public function agregarAlumno(Request $request){
+        $tutorials = Tutorial::all();
+        foreach($tutorials as $tutorial) {
+            if($tutorial->password == $request->password){
+                $tutorial->users()->attach(auth()->user()->id);
+                return redirect()->route('tutorial.index');
+            }
+        }
+        return redirect()->route('tutorial.index');
+        
     }
 }

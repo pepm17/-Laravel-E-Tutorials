@@ -12,7 +12,7 @@
 		<!--======================================== Links de navegación ========================================-->
 		<nav class="full-reset navigation">
 			<ul class="full-reset list-unstyled">
-				<li><a href="index.html">Inicio</a></li>
+				<li><a href="{{route('tutorial.index')}}">Inicio</a></li>
 				
 			</ul>
 		</nav>

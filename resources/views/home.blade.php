@@ -60,8 +60,8 @@ Menu</label>
                         <label>Nombre de la clase(obligatorio)</label>
                     </div>
                     <div class="group">
-                        <input type="text" name="description"><span class="highlight"></span><span class="bar"></span>
-                        <label>Asunto</label>
+                        <input type="text" name="password"><span class="highlight"></span><span class="bar"></span>
+                        <label>Codigo</label>
                     </div>
                     <input type="submit" value="Crear" class="button buttonBlue">                     
                 </form>
@@ -81,13 +81,14 @@ Menu</label>
 				
 				<h4>Unirse a la clase</h4>
 				<h5>pídele a tu profesor el código de la tutoría</h5>
-				<form class="menu-tutoria">
+				<form class="menu-tutoria" method="POST" action="{{route('agregarAlumno')}}">
+				@csrf
   <div class="group">
-    <input type="text"><span class="highlight"></span><span class="bar"></span>
+    <input type="text" name="password"><span class="highlight"></span><span class="bar"></span>
     <label>Codigo de la tutoría</label>
   </div>
   
-  <button type="button" class="button buttonBlue">Unirse
+  <button type="submit" class="button buttonBlue">Unirse
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
   </button>
 </form>
@@ -111,7 +112,8 @@ Menu</label>
 			<div class="row">
 			<!--======================================== Aquí sería con lo del foreach que por cada tutoría se agregue y que en el tag a que dice ver fotos, que al presionar ahí lo envie a su respectiva tutoria dependiendo si es estudiante o tutor========================================-->
 			@foreach($tutorials as $tutorial)
-			
+					@foreach($tutorial->users as $user)
+						@if($user->id == auth()->user()->id)
 						<div class="col-xs-12 col-sm-6 col-md-4">
 							<div class="tile-gallery">
 								<img src="/assets/gallery/default.png" alt="Default">
@@ -123,7 +125,8 @@ Menu</label>
 								</a>
 							</div>
 						</div>
-					
+						@endif
+					@endforeach
 				@endforeach
 		
 			</div>

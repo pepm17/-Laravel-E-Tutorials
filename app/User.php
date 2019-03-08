@@ -33,7 +33,7 @@ class User extends Authenticatable
     }
 
     public function tutorials(){
-        return $this->belongsToMany('App\Tutorial');
+        return $this->belongsToMany('App\Tutorial' , 'user_tutorial');
     }
 
     public function posts(){

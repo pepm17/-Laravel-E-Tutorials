@@ -16,6 +16,7 @@ Route::get('/', function () {
 })->name('/')->middleware('guest');
 
 Auth::routes();
+Route::post('agregarAlumno', 'TutorialController@agregarAlumno')->name('agregarAlumno');
 Route::get('post/{id}', 'PostController@create')->name('post');
 Route::resource('tutorial', 'TutorialController');
 Route::resource('post', 'PostController');
