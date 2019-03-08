@@ -35,30 +35,15 @@ class TutorialController extends Controller
         //return view('');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request) //método crear
     {
-        $request->validate([
-            'name' => 'requerid',
-        ]);
         $tutorial = new Tutorial;
         $tutorial->name = $request->name;
         $tutorial->tutor_id = auth()->user()->id;
         $tutorial->save();
-        //return redirect()->route('.index')->with('succes', 'New tutorial created successfully');
+        return redirect()->route('tutorial.index')->with('succes', 'New tutorial created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id) //metodo para mostrar uno solo
     {
         $tutorial = Tutorial::find($id);

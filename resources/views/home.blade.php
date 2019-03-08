@@ -22,7 +22,7 @@
 			</ul>
             @else
             <ul class="full-reset list-unstyled">
-				<li><a href="#" class="btn-unirse">Crear tutoria</a></li>		
+				<li><a href="#" class="btn-crear">Crear tutoria</a></li>		
 			</ul>
             @endif
 				</fieldset>
@@ -53,19 +53,18 @@ Menu</label>
 			
 				
 				<h4>Crear clase</h4>
-				<form class="menu-tutoria">
-  <div class="group">
-    <input type="text"><span class="highlight"></span><span class="bar"></span>
-    <label>Nombre de la clase(obligatorio)</label>
-  </div>
-  <div class="group">
-    <input type="email"><span class="highlight"></span><span class="bar"></span>
-    <label>Asunto</label>
-  </div>
-  <button type="button" class="button buttonBlue">Crear
-    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-  </button>
-</form>
+				<form class="menu-tutoria" action="{{route('tutorial.store')}}" method="POST">
+                    @csrf
+                    <div class="group">
+                        <input type="text" name="name"><span class="highlight"></span><span class="bar"></span>
+                        <label>Nombre de la clase(obligatorio)</label>
+                    </div>
+                    <div class="group">
+                        <input type="text" name="description"><span class="highlight"></span><span class="bar"></span>
+                        <label>Asunto</label>
+                    </div>
+                    <input type="submit" value="Crear" class="button buttonBlue">                     
+                </form>
 				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fa fa-times-circle"style="font-size:36px;"></i></a>
 			
 			
