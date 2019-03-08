@@ -1,8 +1,24 @@
-@extends('layouts.app')
-
-@section('content')
-<!--======================================== Boton ir arriba ========================================-->
-<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Institucion</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<!--======================================== Boton ir arriba ========================================-->
+	<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
 	<!--======================================== Navegación ========================================-->
 	<header class="full-reset header">
 		<!--======================================== Logo(Nombre INS) ========================================-->
@@ -15,16 +31,11 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-           	@if(auth()->user()->isTutor == 0)
+           	
            <ul class="full-reset list-unstyled">
-				<li><a href="#" class="btn-unirse">Unirse a tutoria</a></li>
-		
+				
+				<li><a href="#" class="btn-crear">Crear</a></li>
 			</ul>
-            @else
-            <ul class="full-reset list-unstyled">
-				<li><a href="#" class="btn-unirse">Crear tutoria</a></li>		
-			</ul>
-            @endif
 				</fieldset>
         </div>
       </div>
@@ -38,7 +49,7 @@ Menu</label>
 		<!--======================================== Links de navegación ========================================-->
 		<nav class="menu-config">
 			<ul>
-				<li href="">Cerrar Sesion</li>
+				<li>Inicio</li>
 				<span class="highlight"></span><span class="bar"></span>
 				<li>Configuración</li>
 				
@@ -99,7 +110,7 @@ Menu</label>
 		</div>
 	</div>
 </div>
-		<!--========================================SI ES ESTUDIANTE SOLO PUEDE UNIRSE A UNA TUTORIA CON UN CODIGO QUE GENERE ALEATORIAMENTE EL PROGRAMA ========================================-->
+<!--========================================SI ES TUTOR SOLO PUEDE CREAR  UNA TUTORIA ========================================-->
 		
 		<!--======================================== Boton menu mobil ========================================-->
 		<a href="#" class=" hidden-sm hidden-md hidden-lg pull-right button-menu-mobile show-close-menu-m"><i class="fa fa-ellipsis-v"></i></a>
@@ -110,24 +121,22 @@ Menu</label>
 		<article class="container">
 			<h2 class="text-center"><i class="fa fa-calendar-o"></i> &nbsp; Eventos Año 2013</h2>
 			<div class="row">
-			<!--======================================== Aquí sería con lo del foreach que por cada tutoría se agregue y que en el tag a que dice ver fotos, que al presionar ahí lo envie a su respectiva tutoria dependiendo si es estudiante o tutor========================================-->
-			@foreach($tutorials as $tutorial)
-			
-						<div class="col-xs-12 col-sm-6 col-md-4">
-							<div class="tile-gallery">
-								<img src="/assets/gallery/default.png" alt="Default">
-								<p class="text-center"><strong>{{$tutorial->name}}</strong></p>
-								<span class="text-center"><strong><small>{{$tutorial->tutor->name}}</small></strong></span>
-								<div class="divider-general"></div>
-								<a href="{{route('tutorial.show', [$tutorial->id])}}">
-									<i class="fa fa-picture-o"></i> &nbsp; Ver fotos
-								</a>
-							</div>
-						</div>
-					
-				@endforeach
-		
+				<!--======================================== Aquí sería con lo del foreach que por cada tutoría se agregue y que en el tag a que dice ver fotos, que al presionar ahí lo envie a su respectiva tutoria dependiendo si es estudiante o tutor========================================-->
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="tile-gallery">
+						<img src="assets/gallery/default.png" alt="Default">
+						<p class="text-center"><strong>Título</strong></p>
+						<span class="text-center"><strong><small>Sub-Título</small></strong></span>
+						<div class="divider-general"></div>
+						<a href="#!">
+							<i class="fa fa-picture-o"></i> &nbsp; Ver fotos
+						</a>
+					</div>
+				</div>
+				
 			</div>
 		</article>
 		<div class="divider-general"></div>
-@endsection
+		
+</body>
+</html>

@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
-<!--======================================== Boton ir arriba ========================================-->
-<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
+	<!--======================================== Boton ir arriba ========================================-->
+	<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
 	<!--======================================== Navegación ========================================-->
 	<header class="full-reset header">
 		<!--======================================== Logo(Nombre INS) ========================================-->
@@ -15,16 +14,11 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-           	@if(auth()->user()->isTutor == 0)
+           	
            <ul class="full-reset list-unstyled">
 				<li><a href="#" class="btn-unirse">Unirse a tutoria</a></li>
 		
 			</ul>
-            @else
-            <ul class="full-reset list-unstyled">
-				<li><a href="#" class="btn-unirse">Crear tutoria</a></li>		
-			</ul>
-            @endif
 				</fieldset>
         </div>
       </div>
@@ -130,4 +124,4 @@ Menu</label>
 			</div>
 		</article>
 		<div class="divider-general"></div>
-@endsection
+		@endsection

@@ -14,12 +14,15 @@ class TutorialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()
     {
         $tutorials = Tutorial::all()/*->paginate(5)*/; //Vista donde se listan todos
-        return view('inicio', compact('tutorials'))->with('i', (request()->input('page', 1) -1)*5);
+        return view('home', compact('tutorials'))->with('i', (request()->input('page', 1) -1)*5);
     }
 
     /**
