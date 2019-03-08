@@ -47,7 +47,7 @@
 						
 		
 		<h2 class="a">{{$post->title}}</h2><h3 class="b" aria-hidden="true">{{$post->description}}</h3>
-		<h4 class="c" aria-hidden="true">{{$post->user->name}}</h4>
+		<h4 class="c" aria-hidden="true"></h4>
 		<div role="button" class="U"  jsshadow="" jsname="hppyvb" aria-label="Cambiar la foto de perfil" aria-disabled="false" tabindex="0">
 		<div class="V" jsname="ksKsZd">
 			
@@ -58,7 +58,7 @@
 		</div>
 			</div>
 			@endforeach
-			<a href="{{route('post.create')}}" value="Compartir publicación" id="btnSendPublicación">Compartir publicación</a> <a value="Crear test" id="btnSendTest">Crear test</a>	
+			<a href="{{route('/')}}" value="Compartir publicación" id="btnSendPublicación">Compartir publicación</a> <a value="Crear test" id="btnSendTest">Crear test</a>	
 </section>
 </section>	
 @endsection
