@@ -49,7 +49,7 @@ class TutorialController extends Controller
         $tutorial = Tutorial::find($id);
         $posts = DB::table('posts')
             ->where('tutorial_id', '=', $id)->get();
-        return view('tutoria', compact('tutorial', 'posts'))->with('i', (request()->input('page', 1) -1)*5);
+        return view('post', compact('tutorial', 'posts'))->with('i', (request()->input('page', 1) -1)*5);
     }
 
     /**

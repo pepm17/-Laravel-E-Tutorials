@@ -25,9 +25,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('publicaciones');
+        return view('publicaciones', compact('id'));
     }
 
     /**
@@ -38,16 +38,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'requerid',
-        ]);
         $post = new Post;
         $post->title = $request->title;
         $post->description = $request->description;
         $post->tutorial_id = $request->tutorial_id;
-        $post->tutor_id = auth()->user()->id;
+        $post->user_id = auth()->user()->id;
         $post->save();
-        //return redirect()->route('.index')->with('succes', 'New post created successfully');
+        $id = $request->tutorial_id;
+        return redirect()->route('tutorial.show', [$id]);
     }
 
     /**
@@ -60,7 +58,7 @@ class PostController extends Controller
     {
         $posts = DB::table('posts')
             ->where('tutorial_id', '=', $id)->get();
-        return view('tutoria', compact('posts'));
+        return view('post', compact('posts'));
     }
 
     /**

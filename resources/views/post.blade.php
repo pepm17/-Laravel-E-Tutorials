@@ -58,7 +58,7 @@
 		</div>
 			</div>
 			@endforeach
-			<a href="{{route('/')}}" value="Compartir publicación" id="btnSendPublicación">Compartir publicación</a> <a value="Crear test" id="btnSendTest">Crear test</a>	
+			<a href="{{route('post', [$tutorial->id])}}" value="Compartir publicación" id="btnSendPublicación">Compartir publicación</a> <a value="Crear test" id="btnSendTest">Crear test</a>	
 </section>
 </section>	
 @endsection

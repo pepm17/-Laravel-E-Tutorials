@@ -238,7 +238,10 @@ video{
 	line-height: 52px;
 	text-align: center;
 	border: 1px solid #BBBBBB;
-	color:#000000
+	color:#000000;
+    position: relative;
+    left: 130px;
+
 }
 
 .popup form .btn-submit {
@@ -1160,20 +1163,20 @@ padding: 10px;
   margin-top:-20px;
   text-align:center;
   position: relative;
-  top:60px;
+  top:30px;
 }
 /*=======================================================================================================
 =                                     estilos publicacionens                                   =
 ========================================================================================================*/
 .icon-bar {
-  width: 50%;
+  width: 10%;
   background-color: #555;
   overflow: auto;
 }
 
 .icon-bar a {
   float: left;
-  width: 20%;
+  width: 50%;
   text-align: center;
   padding: 12px 0;
   transition: all 0.3s ease;
@@ -1182,6 +1185,25 @@ padding: 10px;
 }
 
 .icon-bar a:hover {
+  background-color: #000;
+}
+.icon-bartuto {
+  width: 10%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.icon-bartuto a {
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 25px;
+}
+
+.icon-bartuto a:hover {
   background-color: #000;
 }
 
@@ -1245,6 +1267,28 @@ color: rgba(0,0,0,0.87);
 
 }
 #btnSendPublicación:hover{
+    background: #3371B6;
+}
+#btnSendPost{
+    width: 180px;
+    background: #00796b;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+
+    align-self: flex-end;
+
+    color: #fff;
+    font-family: 'Open sans';
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    left:200px;
+    top:-620px;
+
+}
+#btnSendPost:hover{
     background: #3371B6;
 }
 #btnSendTest{
