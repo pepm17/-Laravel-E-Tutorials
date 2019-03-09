@@ -26,7 +26,7 @@
 			<div class="row">
 				
 				<section class="col-xs-12 col-sm-8 col-md-9 info-section-ins">
-					<div class="confi" style="background-image: url(assets/img/8CA.jpg);" >
+					<div class="confi" style="background-image: url(/assets/img/8CA.jpg);" >
 					
 		<h2 class="a">{{$tutorial->name}}</h2><h3 class="b" aria-hidden="true">Foto de perfil</h3>
 		<div role="button" class="U"  jsshadow="" jsname="hppyvb" aria-label="Cambiar la foto de perfil" aria-disabled="false" tabindex="0">
@@ -43,9 +43,9 @@
 		<br></br>
 
 		@foreach($posts as $post)
+		{{count($post['user'])}}
 		<div class="confi">	<!--======================================== Este es el div que debe modificarse por el contenido del post al usuario tener al menos un post  ========================================-->
-						
-		
+
 		<h2 class="a">{{$post->title}}</h2><h3 class="b" aria-hidden="true">{{$post->description}}</h3>
 		<h4 class="c" aria-hidden="true"></h4>
 		<div role="button" class="U"  jsshadow="" jsname="hppyvb" aria-label="Cambiar la foto de perfil" aria-disabled="false" tabindex="0">

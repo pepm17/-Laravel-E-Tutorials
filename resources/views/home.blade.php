@@ -38,11 +38,8 @@ Menu</label>
 		<!--======================================== Links de navegación ========================================-->
 		<nav class="menu-config">
 			<ul>
-				<li href="">Cerrar Sesion</li>
+				<a href="{{route('auth_logout')}}">Cerrar Sesion</a>
 				<span class="highlight"></span><span class="bar"></span>
-				<li>Configuración</li>
-				
-
 			</ul>
 		</nav>
 		<div class="overlay" id="crear_tutoria">

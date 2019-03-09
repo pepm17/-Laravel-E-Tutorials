@@ -17,7 +17,7 @@ class CreateTutorialsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('tutor_id');
-            $table->string('password');
+            $table->string('password')->unique();
             $table->foreign('tutor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
