@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('/')->middleware('guest');
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('auth_logout'); 
+Auth::routes();
+Route::post('agregarAlumno', 'TutorialController@agregarAlumno')->name('agregarAlumno');
+Route::get('post/{id}', 'PostController@create')->name('post');
+Route::resource('tutorial', 'TutorialController');
+Route::resource('post', 'PostController');
